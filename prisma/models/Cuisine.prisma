@@ -1,0 +1,5 @@
+model Cuisine {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  recipes Recipe[]
+}

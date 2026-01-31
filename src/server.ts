@@ -3,6 +3,7 @@ import type { Request, Response } from 'express';
 import cors from 'cors';
 import type { CorsOptions } from 'cors';
 import userRoutes from './routes/userRoutes.js';
+import cuisineRoutes from './routes/cuisineRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ const corsOptions: CorsOptions = {
 
 app.use(cors(corsOptions));
 app.use('/api', userRoutes);
+app.use('/api', cuisineRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, Swirled!');

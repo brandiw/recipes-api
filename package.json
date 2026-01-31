@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:prisma": "cat prisma/schema.base.prisma prisma/models/*.prisma > prisma/schema.prisma",
+    "postinstall": "npm run build:prisma"
   },
   "keywords": [],
   "author": "",
